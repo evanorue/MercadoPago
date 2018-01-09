@@ -1,0 +1,20 @@
+﻿@model  List<MercadoPago.Models.Payment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container-fluid">
+    <h1>Seleccione Pagos:</h1>
+    <table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(item.Name, "Finish", "Home", new { @class = "btn btn-primary" })
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+

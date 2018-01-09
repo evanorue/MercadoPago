@@ -1,0 +1,15 @@
+﻿@model IEnumerable<MercadoPago.Models.Bank>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@using (Html.BeginForm("Index", "PaymentsSelection", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <div class="container-fluid">
+        <h1>Seleccione Entidad Bancaria</h1>
+        @Html.DropDownList("Items", new SelectList(Model, "Id", "Name", null), "Seleccione..", new { @class = "form-control", onchange = "this.form.submit();" })
+    </div>
+}

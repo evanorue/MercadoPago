@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@using (Html.BeginForm("Index", "CreditCardSelection", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+
+    <div class="container-fluid">
+
+        <h1>Gracias por su Compra!</h1>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6" style="background-color:lavender;">
+                <h4>Ingrese el monto que desea abonar:</h4>
+            </div>
+            <div class="col-xs-6 col-sm-3" >
+                <input type="text" class="form-control" id="amount" name="amount" />
+            </div>
+        </div>
+        <div class="modal-footer">
+            <input type="submit" class="btn btn-primary" value="Completar Pago" />
+        </div>            
+
+   </div>
+}
